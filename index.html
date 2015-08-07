@@ -6,113 +6,146 @@
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/site.css">
 
+	<script type="text/javascript" src="bower_components/jquery/dist/js/jquery.min.js"></script>
 	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/site.js"></script>
 </head>
 <body>
+	<style type="text/css">
+		.panel-default {
+			box-shadow: 1px 1px 5px #888888
+		}
+
+		.edit-area {
+			box-shadow: inset 0 0 3px #888888;
+			padding: 3px;
+			margin-bottom: 10px;
+		}
+
+		.edit-area:last-child {
+			margin-bottom: 0px;
+		}
+
+		.edit-area > label {
+			width: 100%;
+			margin: 1px;
+		}
+
+		.edit-area > textarea {
+			border: 0;
+			width: 100%;
+		}
+
+		.row.with-margin {
+			margin-bottom: 10px;
+		}
+	</style>
+
 
 <div class="container">
 
 	<h1>This is a Heading</h1>
 	<p>This is a paragraph.</p>
 
-	<div class="row">
 
-		<div class="col-md-1">
-			<input type="text" id="currentLevel" value="" readonly="">
-			Current Level
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-1">
+					<input class="form-control" type="text" id="currentLevel" value="" readonly="">
+					Current Level
+				</div>
+				<div class="col-md-1">
+					<input class="form-control" type="text" id="currentLevel" value="">
+					Experience Points
+				</div>
+				<div class="col-md-1">
+					<input class="form-control" type="text" id="currentLevel" value="">
+					Next Level At
+				</div>
+					
+				<div class="col-md-4">
+					<input class="form-control" type="text"><br>
+					Character Name
+				</div>
+				<div class="col-md-1">
+					<input class="form-control" type="text"><br>
+					Armor Class
+				</div>
+				<div class="col-md-1">
+					<input class="form-control" type="text"><br>
+					Hit Points
+				</div>
+				<div class="col-md-1">
+					<input class="form-control" type="text" readonly=""><br>
+					Initiative
+				</div>
+				<div class="col-md-1">
+					<input class="form-control" type="text"><br>
+					Speed
+				</div>
+				<div class="col-md-1">
+					<input class="form-control" type="text" readonly=""><br>
+					Proficiency Bonus
+				</div>
+			</div>
 		</div>
-		<div class="col-md-1">
-			<input type="text" id="currentLevel" value="">
-			Experience Points
-		</div>
-		<div class="col-md-1">
-			<input type="text" id="currentLevel" value="">
-			Next Level At
-		</div>
-			
-		<div class="col-md-4">
-			<input type="text"><br>
-			Character Name
-		</div>
-		<div class="col-md-1">
-			<input type="text"><br>
-			Armor Class
-		</div>
-		<div class="col-md-1">
-			<input type="text"><br>
-			Hit Points
-		</div>
-		<div class="col-md-1">
-			<input type="text" readonly=""><br>
-			Initiative
-		</div>
-		<div class="col-md-1">
-			<input type="text"><br>
-			Speed
-		</div>
-		<div class="col-md-1">
-			<input type="text" readonly=""><br>
-			Proficiency Bonus
-		</div>
-
-
 	</div>
 
-	<div class="row">
-		<div class="col-md-12">
-			Identifying Information
+	<div class="panel panel-default">
+		<div class="panel-heading">Identifying Information</div>
+		<div class="panel-body">
 			<div class="row">
 				<div class="col-md-3">
-					<input type="text"><br>
+					<input class="form-control" type="text"><br>
 					Race
 				</div>
 				<div class="col-md-3">
-					<input type="text"><br>
+					<input class="form-control" type="text"><br>
 					Class
 				</div>
 				<div class="col-md-2">
-					<input type="text"><br>
+					<input class="form-control" type="text"><br>
 					Alignment
 				</div>
 				<div class="col-md-2">
-					<input type="text"><br>
+					<input class="form-control" type="text"><br>
 					Faction
 				</div>
 				<div class="col-md-2">
-					<input type="text"><br>
+					<input class="form-control" type="text"><br>
 					Background
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="col-md-12">
-			Modifiers
+	<div class="panel panel-default">
+		<div class="panel-heading">Modifiers</div>
+		<div class="panel-body">
 			<div class="row">
 				<div class="col-md-2">
-					<input type="text"><br>
+					<input class="form-control" type="text"><br>
 					Strength
 				</div>
 				<div class="col-md-2">
-					<input type="text"><br>
+					<input class="form-control" type="text"><br>
 					Dexterity
 				</div>
 				<div class="col-md-2">
-					<input type="text"><br>
+					<input class="form-control" type="text"><br>
 					Constitution
 				</div>
 				<div class="col-md-2">
-					<input type="text"><br>
+					<input class="form-control" type="text"><br>
 					Intelligence
 				</div>
 				<div class="col-md-2">
-					<input type="text"><br>
+					<input class="form-control" type="text"><br>
 					Wisdom
 				</div>
 				<div class="col-md-2">
-					<input type="text"><br>
+					<input class="form-control" type="text"><br>
 					Charisma
 				</div>
 			</div>
@@ -121,197 +154,445 @@
 	
 	<div class="row">
 		<div class="col-md-6">
-			Attacks
+			<div class="panel panel-default">
+				<div class="panel-heading">Attacks</div>
+				<div class="panel-body"></div>
+			</div>
 		</div>
 		<div class="col-md-6">
-			Saves
-			<div class="row">
-				<div class="col-md-2">
-					<input type="text"><br>
-					Hit Dice
-				</div>
-				<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">Saves and Checks</div>
+				<div class="panel-body">
 					<div class="row">
-						<div class="col-md-12">
-							Save Rolls
-							<input type="checkbox" name="" value="">
-							<input type="checkbox" name="" value="">
-							<input type="checkbox" name="" value="">
+						<div class="col-md-6">
+							Skills
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox" name="" value="">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div>
+									Acrobatics (Dex)
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox" name="" value="">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div>
+									Animal Handling (Wis)
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox" name="" value="">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div>
+									Arcana (Int)
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox" name="" value="">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div>
+									Athletics (Str)
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox" name="" value="">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div>
+									Deception (Cha)
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox" name="" value="">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div>
+									History (Int)
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox" name="" value="">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div>
+									Insight (Wis)
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox" name="" value="">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div>
+									Intimidation (Cha)
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox" name="" value="">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div>
+									Investigation (Int)
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox" name="" value="">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div>
+									Medicine (Wis)
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox" name="" value="">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div>
+									Nature (Int)
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox" name="" value="">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div>
+									Perception (Wis)
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox" name="" value="">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div>
+									Performance (Cha)
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox" name="" value="">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div>
+									Persuasion (Cha)
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox" name="" value="">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div>
+									Religion (Int)
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox" name="" value="">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div>
+									Sleight of Hand (Dex)
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox" name="" value="">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div>
+									Stealth (Dex)
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox" name="" value="">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div>
+									Survival (Wis)
+								</div>
+							</div>
 						</div>
-						<div class="col-md-12">
-							Death Rolls
-							<input type="checkbox" name="" value="">
-							<input type="checkbox" name="" value="">
-							<input type="checkbox" name="" value="">
+						<div class="col-md-6">
+							Saving Throws
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div class="col-md-3">	
+									Strength
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div class="col-md-3">	
+									Dexterity
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div class="col-md-3">	
+									Constitution
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div class="col-md-3">	
+									Intelligence
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div class="col-md-3">	
+									Widsom
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-1">
+									<input type="checkbox">
+								</div>
+								<div class="col-md-2">
+									<input class="form-control" type="text" name="" value="" readonly="">
+								</div>
+								<div class="col-md-3">	
+									Charisma
+								</div>
+							</div>	
+							<div class="row">
+								<div class="col-md-12">
+									<div class="well">
+										<div class="row">
+											<div class="col-md-12">
+												Save Rolls
+												<input type="checkbox" name="" value="">
+												<input type="checkbox" name="" value="">
+												<input type="checkbox" name="" value="">
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												Death Rolls
+												<input type="checkbox" name="" value="">
+												<input type="checkbox" name="" value="">
+												<input type="checkbox" name="" value="">
+											</div>
+										</div>							
+										Death Saves
+									</div>	
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3">	
+									<input class="form-control" type="text"><br>
+									Hit Dice
+								</div>
+							</div>
 						</div>
 					</div>
-					Death Saves
 				</div>
 			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">Spells</div>
+		<div class="panel-body">
 			<div class="row">
-				<div class="col-md-12">
-					Saving Throws
-				</div>	
-			</div>
-			<div class="row">
-				<div class="col-md-2">
-					Proficient
-				</div>
-				<div class="col-md-2">
-					Modifier
-				</div>
-				<div class="col-md-8">	
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-2">
-					<input type="checkbox">
-				</div>
-				<div class="col-md-2">
-					<input type="text" name="" value="" readonly="">
-				</div>
-				<div class="col-md-8">	
-					Strength
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-2">
-					<input type="checkbox">
-				</div>
-				<div class="col-md-2">
-					<input type="text" name="" value="" readonly="">
-				</div>
-				<div class="col-md-8">	
-					Dexterity
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-2">
-					<input type="checkbox">
-				</div>
-				<div class="col-md-2">
-					<input type="text" name="" value="" readonly="">
-				</div>
-				<div class="col-md-8">	
-					Constitution
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-2">
-					<input type="checkbox">
-				</div>
-				<div class="col-md-2">
-					<input type="text" name="" value="" readonly="">
-				</div>
-				<div class="col-md-8">	
-					Intelligence
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-2">
-					<input type="checkbox">
-				</div>
-				<div class="col-md-2">
-					<input type="text" name="" value="" readonly="">
-				</div>
-				<div class="col-md-8">	
-					Widsom
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-2">
-					<input type="checkbox">
-				</div>
-				<div class="col-md-2">
-					<input type="text" name="" value="" readonly="">
-				</div>
-				<div class="col-md-8">	
-					Charisma
+				<div class="col-md-4">
+					<select name="">
+						<option value=""></option>
+						<option value="">Strength</option>
+						<option value="">Dexterity</option>
+						<option value="">Constitution</option>
+						<option value="">Intelligence</option>
+						<option value="">Wisdom</option>
+						<option value="">Charisma</option>
+					</select><br>
+					Spellcasting Ability
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="col-md-12">
-			<div class="row">
-				<div class="col-md-12">
-					Spells!
-				</div>	
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">Proficiencies</div>
+				<div class="panel-body">
+					<div class="edit-area">
+						<label for="weapons">Weapons</label>
+						<textarea name="weapons" rows="4"></textarea>
+					</div>
+
+					<div class="edit-area">
+						<label for="armor">Armor</label>
+						<textarea name="armor" rows="4"></textarea>
+					</div>
+
+					<div class="edit-area">
+						<label for="languages">Languages</label>
+						<textarea name="languages" rows="4"></textarea>
+					</div>
+
+					<div class="edit-area">
+						<label for="tools">Tools</label>
+						<textarea name="tools" rows="4"></textarea>
+					</div>
+				</div>
 			</div>
-			<div class="row">
-		<div class="col-md-4">
-			<select name="">
-				<option value=""></option>
-				<option value="">Strength</option>
-				<option value="">Dexterity</option>
-				<option value="">Constitution</option>
-				<option value="">Intelligence</option>
-				<option value="">Wisdom</option>
-				<option value="">Charisma</option>
-			</select>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">Description</div>
+				<div class="panel-body">
+					<div class="row with-margin">
+						<div class="col-md-6">
+							<div class="edit-area">
+								<label for="physical">Physical</label>
+								<textarea name="physical" rows="4"></textarea>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="edit-area">
+								<label for="ideals">Ideals</label>
+								<textarea name="ideals" rows="4"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="row with-margin">
+						<div class="col-md-6">
+							<div class="edit-area">
+								<label for="personality">Personality</label>
+								<textarea name="personality" rows="4"></textarea>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="edit-area">
+								<label for="bonds">Bonds</label>
+								<textarea name="bonds" rows="4"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="row with-margin">
+						<div class="col-md-6">
+							<div class="edit-area">
+								<label for="features">Features and Traits</label>
+								<textarea name="features" rows="4"></textarea>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="edit-area">
+								<label for="flaws">Flaws</label>
+								<textarea name="flaws" rows="4"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="edit-area">
+								<label for="backstory">Backstory</label>
+								<textarea name="backstory" rows="4"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="col-md-6">
-			Proficiencies<br>
-			<input type="text" name="" value=""><br>
-			Weapons<br>
-			<input type="text" name="" value=""><br>
-			Armor<br>
-			<input type="text" name="" value=""><br>
-			Languages<br>
-			<input type="text" name="" value=""><br>
-			Tools<br>
+			<div class="panel panel-default">
+				<div class="panel-heading"> Inventory</div>
+				<div class="panel-body">
+					<textarea name="inventory" rows="4"></textarea>
+				</div>
+			</div>
 		</div>
 		<div class="col-md-6">
-			Description
-			<div class="row">
-				<div class="col-md-6">
-					<input type="text" name="" value=""><br>
-					Physical
-				</div>
-				<div class="col-md-6">
-					<input type="text" name="" value=""><br>
-					Ideals
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="edit-area">
+						<label for="notes">Notes</label>
+						<textarea name="notes" rows="4"></textarea>
+					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<input type="text" name="" value=""><br>
-					Personality
-				</div>
-				<div class="col-md-6">
-					<input type="text" name="" value=""><br>
-					Bonds
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<input type="text" name="" value=""><br>
-					Features/Traits
-				</div>
-				<div class="col-md-6">
-					<input type="text" name="" value=""><br>
-					Flaws
-				</div>
-			</div>
-			<div class="row">
-				<input type="text" name="" value=""><br>
-				Backstory
-			</div>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-md-6">
-			<input type="text" name="" value=""><br>
-			Inventory
-		</div>
-		<div class="col-md-6">
-			<input type="text" name="" value=""><br>
-			Notes
 		</div>
 	</div>
 
