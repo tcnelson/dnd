@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
+$(function () {
+  $('[data-toggle="popover"]').popover();
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+  $('.modifier').change(function() {
+  	var value = $(this).val();
+  	var modifier = $(this).data('modifier');
 
-</body>
-</html>
+  	var calculated = Math.floor((value - 10) / 2);
+
+  	var attributes = $('[data-modifier="' + modifier + '"]');  //'[data-modifier="strength"]'
+  	for (var i = 1; i < attributes.length; i++){
+		$(attributes[i]).val(calculated);
+  	}
+  });
+})

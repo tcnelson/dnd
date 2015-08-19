@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<title>Doges and Dragons</title>
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/site.css">
 
-	<script type="text/javascript" src="bower_components/jquery/dist/js/jquery.min.js"></script>
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/site.js"></script>
 </head>
@@ -44,7 +44,7 @@
 
 <div class="container">
 
-	<h1>This is a Heading</h1>
+	<h1>Doges and Dragons</h1>
 	<p>This is a paragraph.</p>
 
 
@@ -125,27 +125,27 @@
 		<div class="panel-body">
 			<div class="row">
 				<div class="col-md-2">
-					<input class="form-control" type="text"><br>
+					<input class="form-control modifier" data-toggle="popover" title="Strength" data-modifier="strength" data-content="Strength is the ability to crush a tomato." data-trigger="focus" type="text"><br>
 					Strength
 				</div>
 				<div class="col-md-2">
-					<input class="form-control" type="text"><br>
+					<input class="form-control" data-toggle="popover" title="Dexterity" data-content="Dexterity is the ability to dodge a tomato." data-trigger="focus"type="text"><br>
 					Dexterity
 				</div>
 				<div class="col-md-2">
-					<input class="form-control" type="text"><br>
+					<input class="form-control" data-toggle="popover" title="Constitution" data-content="Constitution is the ability to eat a bad tomato." data-trigger="focus" type="text"><br>
 					Constitution
 				</div>
 				<div class="col-md-2">
-					<input class="form-control" type="text"><br>
+					<input class="form-control" data-toggle="popover" title="Intelligence" data-content="Intelligence is knowing that a tomato is a fruit." data-trigger="focus"type="text"><br>
 					Intelligence
 				</div>
 				<div class="col-md-2">
-					<input class="form-control" type="text"><br>
+					<input class="form-control" data-toggle="popover" title="Wisdom" data-content="Wisdom is knowing not to put a tomato in a fruit salad." data-trigger="focus"type="text"><br>
 					Wisdom
 				</div>
 				<div class="col-md-2">
-					<input class="form-control" type="text"><br>
+					<input class="form-control" data-toggle="popover" title="Charisma" data-content="Charisma is the ability to sell a tomato-based fruit salad." data-trigger="focus"type="text"><br>
 					Charisma
 				</div>
 			</div>
@@ -156,7 +156,47 @@
 		<div class="col-md-6">
 			<div class="panel panel-default">
 				<div class="panel-heading">Attacks</div>
-				<div class="panel-body"></div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-3">
+							Weapon
+						</div>
+						<div class="col-md-3">
+							Damage + Modifiers
+						</div>
+						<div class="col-md-3">
+							Modifier 
+						</div>
+						<div class="col-md-3">
+							Damage Type
+						</div>
+					</div>
+					<div class="row" id="weaponRow">
+						<div class="col-md-3">
+							<input class="form-control" type="text" name="" placeholder="Type">
+						</div>
+						<div class="col-md-3">
+							<div class="input-group">
+								<input type="text" class="form-control" name="" value="">
+								<span class="input-group-addon"></span>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<select class="form-control" name="">
+								<option value=""></option>
+								<option value="">Strength</option>
+								<option value="">Dexterity</option>
+								<option value="">Constitution</option>
+								<option value="">Intelligence</option>
+								<option value="">Wisdom</option>
+								<option value="">Charisma</option>
+							</select>
+						</div>
+						<div class="col-md-3">
+							<input class="form-control" type="text" name="" value="" placeholder="">
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="col-md-6">
@@ -204,7 +244,7 @@
 									<input type="checkbox" name="" value="">
 								</div>
 								<div class="col-md-2">
-									<input class="form-control" type="text" name="" value="" readonly="">
+									<input class="form-control" type="text" name="" value="" readonly="" data-modifier="strength">
 								</div>
 								<div>
 									Athletics (Str)
@@ -473,8 +513,8 @@
 		<div class="panel-heading">Spells</div>
 		<div class="panel-body">
 			<div class="row">
-				<div class="col-md-4">
-					<select name="">
+				<div class="col-md-2">
+					<select class="form-control" name="">
 						<option value=""></option>
 						<option value="">Strength</option>
 						<option value="">Dexterity</option>
@@ -482,8 +522,30 @@
 						<option value="">Intelligence</option>
 						<option value="">Wisdom</option>
 						<option value="">Charisma</option>
-					</select><br>
+					</select>
 					Spellcasting Ability
+				</div>
+				<div class="col-md-1">
+					<input class="form-control" type="text" name="" value="" readonly="">
+					Spell Save DC
+				</div>
+				<div class="col-md-1">
+					<input class="form-control" data-toggle="popover" data-content="Add this to your attack roll, not your damage roll." type="text" data-trigger="focus"name="" value="" readonly="">
+					Spell Attack Bonus
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					Cantrips
+				</div>
+				<div class="col-md-3">
+					Level 1
+				</div>
+				<div class="col-md-3">
+					Level 2
+				</div>
+				<div class="col-md-3">
+					Level 3
 				</div>
 			</div>
 		</div>
