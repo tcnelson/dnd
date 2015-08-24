@@ -137,23 +137,23 @@
 					Strength
 				</div>
 				<div class="col-md-2">
-					<input class="form-control" data-toggle="popover" title="Dexterity" data-content="Dexterity is the ability to dodge a tomato." data-trigger="focus"type="text"><br>
+					<input class="form-control" data-toggle="popover" title="Dexterity" data-modifier="dexterity" data-content="Dexterity is the ability to dodge a tomato." data-trigger="focus"type="text"><br>
 					Dexterity
 				</div>
 				<div class="col-md-2">
-					<input class="form-control" data-toggle="popover" title="Constitution" data-content="Constitution is the ability to eat a bad tomato." data-trigger="focus" type="text"><br>
+					<input class="form-control" data-toggle="popover" title="Constitution" data-modifier="constitution" data-content="Constitution is the ability to eat a bad tomato." data-trigger="focus" type="text"><br>
 					Constitution
 				</div>
 				<div class="col-md-2">
-					<input class="form-control" data-toggle="popover" title="Intelligence" data-content="Intelligence is knowing that a tomato is a fruit." data-trigger="focus"type="text"><br>
+					<input class="form-control" data-toggle="popover" title="Intelligence" data-modifier="intelligence" data-content="Intelligence is knowing that a tomato is a fruit." data-trigger="focus"type="text"><br>
 					Intelligence
 				</div>
 				<div class="col-md-2">
-					<input class="form-control" data-toggle="popover" title="Wisdom" data-content="Wisdom is knowing not to put a tomato in a fruit salad." data-trigger="focus"type="text"><br>
+					<input class="form-control" data-toggle="popover" title="Wisdom" data-modifier="wisdom" data-content="Wisdom is knowing not to put a tomato in a fruit salad." data-trigger="focus"type="text"><br>
 					Wisdom
 				</div>
 				<div class="col-md-2">
-					<input class="form-control" data-toggle="popover" title="Charisma" data-content="Charisma is the ability to sell a tomato-based fruit salad." data-trigger="focus"type="text"><br>
+					<input class="form-control" data-toggle="popover" title="Charisma" data-modifier="charisma" data-content="Charisma is the ability to sell a tomato-based fruit salad." data-trigger="focus"type="text"><br>
 					Charisma
 				</div>
 			</div>
@@ -234,7 +234,7 @@
 									<input type="checkbox" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" type="text" name="" value="" readonly="">
+									<input class="form-control" type="text" name="" value="" readonly="" data-modifier="dexterity">
 								</div>
 								<div>
 									Acrobatics (Dex)
@@ -245,7 +245,7 @@
 									<input type="checkbox" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" type="text" name="" value="" readonly="">
+									<input class="form-control" type="text" name="" value="" readonly="" data-modifier="wisdom">
 								</div>
 								<div>
 									Animal Handling (Wis)
@@ -256,7 +256,7 @@
 									<input type="checkbox" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" type="text" name="" value="" readonly="">
+									<input class="form-control" type="text" name="" value="" readonly="" data-modifier="intelligence">
 								</div>
 								<div>
 									Arcana (Int)
@@ -278,7 +278,7 @@
 									<input type="checkbox" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" type="text" name="" value="" readonly="">
+									<input class="form-control" type="text" name="" value="" readonly="" data-modifier="charisma">
 								</div>
 								<div>
 									Deception (Cha)
@@ -289,7 +289,7 @@
 									<input type="checkbox" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" type="text" name="" value="" readonly="">
+									<input class="form-control" type="text" name="" value="" readonly="" data-modifier="intelligence">
 								</div>
 								<div>
 									History (Int)
@@ -300,7 +300,7 @@
 									<input type="checkbox" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" type="text" name="" value="" readonly="">
+									<input class="form-control" type="text" name="" value="" readonly="" data-modifier="wisdom">
 								</div>
 								<div>
 									Insight (Wis)
@@ -311,7 +311,7 @@
 									<input type="checkbox" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" type="text" name="" value="" readonly="">
+									<input class="form-control" type="text" name="" value="" readonly="" data-modifier="charisma">
 								</div>
 								<div>
 									Intimidation (Cha)
@@ -322,7 +322,7 @@
 									<input type="checkbox" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" type="text" name="" value="" readonly="">
+									<input class="form-control" type="text" name="" value="" readonly="" data-modifier="intelligence">
 								</div>
 								<div>
 									Investigation (Int)
@@ -333,7 +333,7 @@
 									<input type="checkbox" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" type="text" name="" value="" readonly="">
+									<input class="form-control" type="text" name="" value="" readonly="" data-modifier="wisdom">
 								</div>
 								<div>
 									Medicine (Wis)
@@ -344,7 +344,7 @@
 									<input type="checkbox" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" type="text" name="" value="" readonly="">
+									<input class="form-control" type="text" name="" value="" readonly="" data-modifier="intelligence">
 								</div>
 								<div>
 									Nature (Int)
@@ -355,7 +355,7 @@
 									<input type="checkbox" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" type="text" name="" value="" readonly="">
+									<input class="form-control" type="text" name="" value="" readonly="" data-modifier="wisdom">
 								</div>
 								<div>
 									Perception (Wis)
@@ -366,7 +366,7 @@
 									<input type="checkbox" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" type="text" name="" value="" readonly="">
+									<input class="form-control" type="text" name="" value="" readonly="" data-modifier="charisma">
 								</div>
 								<div>
 									Performance (Cha)
@@ -377,7 +377,7 @@
 									<input type="checkbox" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" type="text" name="" value="" readonly="">
+									<input class="form-control" type="text" name="" value="" readonly="" data-modifier="charisma">
 								</div>
 								<div>
 									Persuasion (Cha)
@@ -388,7 +388,7 @@
 									<input type="checkbox" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" type="text" name="" value="" readonly="">
+									<input class="form-control" type="text" name="" value="" readonly="" data-modifier="intelligence">
 								</div>
 								<div>
 									Religion (Int)
@@ -399,7 +399,7 @@
 									<input type="checkbox" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" type="text" name="" value="" readonly="">
+									<input class="form-control" type="text" name="" value="" readonly="" data-modifier="dexterity">
 								</div>
 								<div>
 									Sleight of Hand (Dex)
@@ -410,7 +410,7 @@
 									<input type="checkbox" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" type="text" name="" value="" readonly="">
+									<input class="form-control" type="text" name="" value="" readonly="" data-modifier="dexterity">
 								</div>
 								<div>
 									Stealth (Dex)
@@ -421,7 +421,7 @@
 									<input type="checkbox" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" type="text" name="" value="" readonly="">
+									<input class="form-control" type="text" name="" value="" readonly="" data-modifier="wisdom">
 								</div>
 								<div>
 									Survival (Wis)
