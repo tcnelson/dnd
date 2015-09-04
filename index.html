@@ -47,6 +47,10 @@
 			padding-left: 15px;
 			padding-right: 15px;
 		}
+
+		.skill {
+			padding: 6px 10px;
+		}
 	</style>
 
 
@@ -85,7 +89,7 @@
 					Hit Points
 				</div>
 				<div class="col-md-1">
-					<input class="form-control" type="text" readonly=""><br>
+					<input class="form-control" id="initiative" type="text" readonly=""><br>
 					Initiative
 				</div>
 				<div class="col-md-1">
@@ -133,27 +137,45 @@
 		<div class="panel-body">
 			<div class="row">
 				<div class="col-md-2">
-					<input class="form-control modifier" id="strength" data-toggle="popover" title="Strength" data-target=".strength" data-content="Strength is the ability to crush a tomato." data-trigger="focus" type="text"><br>
+					<div class="input-group">
+						<input class="form-control modifier" id="strength" data-toggle="popover" title="Strength" data-target=".strength" data-content="Strength is the ability to crush a tomato." data-trigger="focus" type="text">
+						<span class="input-group-addon bonus strength" id="strength-bonus" data-modifier="#strength"></span>
+					</div>
 					Strength
 				</div>
 				<div class="col-md-2">
-					<input class="form-control modifier" id="dexterity" data-toggle="popover" title="Dexterity" data-target=".dexterity" data-content="Dexterity is the ability to dodge a tomato." data-trigger="focus" type="text"><br>
+					<div class="input-group">
+						<input class="form-control modifier" id="dexterity" data-toggle="popover" title="Dexterity" data-target=".dexterity" data-content="Dexterity is the ability to dodge a tomato." data-trigger="focus" type="text">
+						<span class="input-group-addon bonus dexterity" id="dexterity-bonus" data-modifier="#dexterity"></span>
+					</div>
 					Dexterity
 				</div>
 				<div class="col-md-2">
-					<input class="form-control modifier" id="constitution" data-toggle="popover" title="Constitution" data-target=".constitution" data-content="Constitution is the ability to eat a bad tomato." data-trigger="focus" type="text"><br>
+					<div class="input-group">
+						<input class="form-control modifier" id="constitution" data-toggle="popover" title="Constitution" data-target=".constitution" data-content="Constitution is the ability to eat a bad tomato." data-trigger="focus" type="text">
+						<span class="input-group-addon bonus constitution" id="constitution-bonus" data-modifier="#constitution"></span>
+					</div>
 					Constitution
 				</div>
 				<div class="col-md-2">
-					<input class="form-control modifier" id="intelligence" data-toggle="popover" title="Intelligence" data-target=".intelligence" data-content="Intelligence is knowing that a tomato is a fruit." data-trigger="focus"type="text"><br>
+					<div class="input-group">
+						<input class="form-control modifier" id="intelligence" data-toggle="popover" title="Intelligence" data-target=".intelligence" data-content="Intelligence is knowing that a tomato is a fruit." data-trigger="focus"type="text">
+						<span class="input-group-addon bonus intelligence" id="intelligence-bonus" data-modifier="#intelligence"></span>
+					</div>
 					Intelligence
 				</div>
 				<div class="col-md-2">
-					<input class="form-control modifier" id="wisdom" data-toggle="popover" title="Wisdom" data-target=".wisdom" data-content="Wisdom is knowing not to put a tomato in a fruit salad." data-trigger="focus"type="text"><br>
+					<div class="input-group">
+						<input class="form-control modifier" id="wisdom" data-toggle="popover" title="Wisdom" data-target=".wisdom" data-content="Wisdom is knowing not to put a tomato in a fruit salad." data-trigger="focus"type="text">
+						<span class="input-group-addon bonus wisdom" id="wisdom-bonus" data-modifier="#wisdom"></span>
+					</div>
 					Wisdom
 				</div>
 				<div class="col-md-2">
-					<input class="form-control modifier" id="charisma" data-toggle="popover" title="Charisma" data-target=".charisma" data-content="Charisma is the ability to sell a tomato-based fruit salad." data-trigger="focus"type="text"><br>
+					<div class="input-group">
+						<input class="form-control modifier" id="charisma" data-toggle="popover" title="Charisma" data-target=".charisma" data-content="Charisma is the ability to sell a tomato-based fruit salad." data-trigger="focus"type="text">
+						<span class="input-group-addon bonus charisma" id="charisma-bonus" data-modifier="#charisma"></span>
+					</div>
 					Charisma
 				</div>
 			</div>
@@ -179,14 +201,14 @@
 							Damage Type
 						</div>
 					</div>
-					<div class="row" id="weaponRow">
+					<div class="row weapon" id="weaponRow-1">
 						<div class="col-md-3">
 							<input class="form-control" type="text" name="" placeholder="Type">
 						</div>
 						<div class="col-md-3">
 							<div class="input-group">
 								<input type="text" class="form-control" name="" value="">
-								<span class="input-group-addon"></span>
+								<span class="input-group-addon" id=""></span>
 							</div>
 						</div>
 						<div class="col-md-3">
@@ -234,7 +256,7 @@
 									<input class="proficiency" id="acrobatics-proficiency" type="checkbox" data-target="#acrobatics" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control dexterity" id="acrobatics" type="text" name="" value="" readonly="" data-modifier="#dexterity" data-proficiency="#acrobatics-proficiency">
+									<input class="form-control skill dexterity" id="acrobatics" type="text" name="" value="" readonly="" data-modifier="#dexterity" data-proficiency="#acrobatics-proficiency">
 								</div>
 								<div>
 									Acrobatics (Dex)
@@ -245,7 +267,7 @@
 									<input class="proficiency" id="animal-handling-proficiency" type="checkbox" data-target="#animal-handling" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control wisdom" id="animal-handling" type="text" name="" value="" readonly="" data-modifier="#wisdom" data-proficiency="#animal-handling-proficiency">
+									<input class="form-control skill wisdom" id="animal-handling" type="text" name="" value="" readonly="" data-modifier="#wisdom" data-proficiency="#animal-handling-proficiency">
 								</div>
 								<div>
 									Animal Handling (Wis)
@@ -256,7 +278,7 @@
 									<input class="proficiency" id="arcana-proficiency" type="checkbox" data-target="#arcaana" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control intelligence" id="arcana" type="text" name="" value="" readonly="" data-modifier="#intelligence" data-proficiency="#arcana-proficiency">
+									<input class="form-control skill intelligence" id="arcana" type="text" name="" value="" readonly="" data-modifier="#intelligence" data-proficiency="#arcana-proficiency">
 								</div>
 								<div>
 									Arcana (Int)
@@ -267,7 +289,7 @@
 									<input class="proficiency" id="athletics-proficiency" type="checkbox" data-target="#athletics" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control strength" id="athletics" type="text" name="" value="" readonly="" data-modifier="#strength" data-proficiency="#athletics-proficiency">
+									<input class="form-control skill strength" id="athletics" type="text" name="" value="" readonly="" data-modifier="#strength" data-proficiency="#athletics-proficiency">
 								</div>
 								<div>
 									Athletics (Str)
@@ -278,7 +300,7 @@
 									<input class="proficiency" id="deception-proficiency" type="checkbox" data-target="#deception" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control charisma" id="deception" type="text" name="" value="" readonly="" data-modifier="#charisma" data-proficiency="#deception-proficiency">
+									<input class="form-control skill charisma" id="deception" type="text" name="" value="" readonly="" data-modifier="#charisma" data-proficiency="#deception-proficiency">
 								</div>
 								<div>
 									Deception (Cha)
@@ -289,7 +311,7 @@
 									<input class="proficiency" id="history-proficiency" type="checkbox" data-target="#history" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control intelligence" id="history" type="text" name="" value="" readonly="" data-modifier="#intelligence" data-proficiency="#history-proficiency">
+									<input class="form-control skill intelligence" id="history" type="text" name="" value="" readonly="" data-modifier="#intelligence" data-proficiency="#history-proficiency">
 								</div>
 								<div>
 									History (Int)
@@ -300,7 +322,7 @@
 									<input class="proficiency" id="insight-proficiency" type="checkbox" data-target="#insight" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control wisdom" id="insight" type="text" name="" value="" readonly="" data-modifier="#wisdom" data-proficiency="#insight-proficiency">
+									<input class="form-control skill wisdom" id="insight" type="text" name="" value="" readonly="" data-modifier="#wisdom" data-proficiency="#insight-proficiency">
 								</div>
 								<div>
 									Insight (Wis)
@@ -311,7 +333,7 @@
 									<input class="proficiency" id="intimidation-proficiency" type="checkbox" data-target="#intimidation" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control charisma" id="intimidation" type="text" name="" value="" readonly="" data-modifier="#charisma" data-proficiency="#intimidation-proficiency">
+									<input class="form-control skill charisma" id="intimidation" type="text" name="" value="" readonly="" data-modifier="#charisma" data-proficiency="#intimidation-proficiency">
 								</div>
 								<div>
 									Intimidation (Cha)
@@ -322,7 +344,7 @@
 									<input class="proficiency" id="investigation-proficiency" type="checkbox" data-target="#investigation" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control intelligence" id="investigation" type="text" name="" value="" readonly="" data-modifier="#intelligence" data-proficiency="#investigation-proficiency">
+									<input class="form-control skill intelligence" id="investigation" type="text" name="" value="" readonly="" data-modifier="#intelligence" data-proficiency="#investigation-proficiency">
 								</div>
 								<div>
 									Investigation (Int)
@@ -333,7 +355,7 @@
 									<input class="proficiency" id="medicine-proficiency" type="checkbox" data-target="#medicine" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control wisdom" id="medicine" type="text" name="" value="" readonly="" data-modifier="#wisdom" data-proficiency="#medicine-proficiency">
+									<input class="form-control skill wisdom" id="medicine" type="text" name="" value="" readonly="" data-modifier="#wisdom" data-proficiency="#medicine-proficiency">
 								</div>
 								<div>
 									Medicine (Wis)
@@ -344,7 +366,7 @@
 									<input class="proficiency" id="nature-proficiency" type="checkbox" data-target="#nature" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control intelligence" id="nature" type="text" name="" value="" readonly="" data-modifier="#intelligence" data-proficiency="#nature-proficiency">
+									<input class="form-control skill intelligence" id="nature" type="text" name="" value="" readonly="" data-modifier="#intelligence" data-proficiency="#nature-proficiency">
 								</div>
 								<div>
 									Nature (Int)
@@ -355,7 +377,7 @@
 									<input class="proficiency" id="perception-proficiency" type="checkbox" data-target="#perception" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control wisdom" id="perception" type="text" name="" value="" readonly="" data-modifier="#wisdom" data-proficiency="#perception-proficiency">
+									<input class="form-control skill wisdom" id="perception" type="text" name="" value="" readonly="" data-modifier="#wisdom" data-proficiency="#perception-proficiency">
 								</div>
 								<div>
 									Perception (Wis)
@@ -366,7 +388,7 @@
 									<input class="proficiency" id="performance-proficiency" type="checkbox" data-target="#performance" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control charisma" id="performance" type="text" name="" value="" readonly="" data-modifier="#charisma" data-proficiency="#performance-proficiency">
+									<input class="form-control skill charisma" id="performance" type="text" name="" value="" readonly="" data-modifier="#charisma" data-proficiency="#performance-proficiency">
 								</div>
 								<div>
 									Performance (Cha)
@@ -377,7 +399,7 @@
 									<input class="proficiency" id="persuasion-proficiency" type="checkbox" data-target="#persuasion" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control charisma" id="persuasion" type="text" name="" value="" readonly="" data-modifier="#charisma" data-proficiency="#persuasion-proficiency">
+									<input class="form-control skill charisma" id="persuasion" type="text" name="" value="" readonly="" data-modifier="#charisma" data-proficiency="#persuasion-proficiency">
 								</div>
 								<div>
 									Persuasion (Cha)
@@ -388,7 +410,7 @@
 									<input class="proficiency" id="religion-proficiency" type="checkbox" data-target="#religion" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control intelligence" id="religion" type="text" name="" value="" readonly="" data-modifier="#intelligence" data-proficiency="#religion-proficiency">
+									<input class="form-control skill intelligence" id="religion" type="text" name="" value="" readonly="" data-modifier="#intelligence" data-proficiency="#religion-proficiency">
 								</div>
 								<div>
 									Religion (Int)
@@ -399,7 +421,7 @@
 									<input class="proficiency" id="sleight-of-hand-proficiency" type="checkbox" data-target="#sleight-of-hand" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control dexterity" id="sleight-of-hand" type="text" name="" value="" readonly="" data-modifier="#dexterity" data-proficiency="#sleight-of-hand-proficiency">
+									<input class="form-control skill dexterity" id="sleight-of-hand" type="text" name="" value="" readonly="" data-modifier="#dexterity" data-proficiency="#sleight-of-hand-proficiency">
 								</div>
 								<div>
 									Sleight of Hand (Dex)
@@ -410,7 +432,7 @@
 									<input class="proficiency" id="stealth-proficiency" type="checkbox" data-target="#stealth" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control dexterity" id="stealth" type="text" name="" value="" readonly="" data-modifier="#dexterity" data-proficiency="#stealth-proficiency">
+									<input class="form-control skill dexterity" id="stealth" type="text" name="" value="" readonly="" data-modifier="#dexterity" data-proficiency="#stealth-proficiency">
 								</div>
 								<div>
 									Stealth (Dex)
@@ -421,7 +443,7 @@
 									<input class="proficiency" id="survival-proficiency" type="checkbox" data-target="#survival" name="" value="">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control wisdom" id="survival" type="text" name="" value="" readonly="" data-modifier="#wisdom" data-proficiency="#survival-proficiency">
+									<input class="form-control skill wisdom" id="survival" type="text" name="" value="" readonly="" data-modifier="#wisdom" data-proficiency="#survival-proficiency">
 								</div>
 								<div>
 									Survival (Wis)
@@ -432,10 +454,10 @@
 							Saving Throws
 							<div class="row">
 								<div class="col-md-1">
-									<input class="proficiency" type="checkbox" data-target="#strength-save">
+									<input class="proficiency" id="strength-proficiency" type="checkbox" data-target="#strength-save">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" type="text" name="" value="" readonly="">
+									<input class="form-control skill strength" id="strength-save" type="text" name="" value="" readonly="" data-modifier="#strength" data-proficiency="#strength-proficiency">
 								</div>
 								<div class="col-md-3">	
 									Strength
@@ -443,10 +465,10 @@
 							</div>
 							<div class="row">
 								<div class="col-md-1">
-									<input class="proficiency" type="checkbox" data-target="#dexterity-save">
+									<input class="proficiency" id="dexterity-proficiency" type="checkbox" data-target="#dexterity-save">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" id="dexterity-save" type="text" name="" value="" readonly="">
+									<input class="form-control skill dexterity" id="dexterity-save" type="text" name="" value="" readonly="" data-modifier="#dexterity" data-proficiency="#dexterity-proficiency">
 								</div>
 								<div class="col-md-3">	
 									Dexterity
@@ -454,10 +476,10 @@
 							</div>
 							<div class="row">
 								<div class="col-md-1">
-									<input class="proficiency" type="checkbox" data-target="#constitution-save">
+									<input class="proficiency" id="constitution-proficiency" type="checkbox" data-target="#constitution-save">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" id="constitution-save" type="text" name="" value="" readonly="">
+									<input class="form-control skill constitution" id="constitution-save" type="text" name="" value="" readonly="" data-modifier="#constitution" data-proficiency="#constitution-proficiency">
 								</div>
 								<div class="col-md-3">	
 									Constitution
@@ -465,10 +487,10 @@
 							</div>
 							<div class="row">
 								<div class="col-md-1">
-									<input class="proficiency" type="checkbox" data-target="#intelligence-save">
+									<input class="proficiency" id="intelligence-proficiency" type="checkbox" data-target="#intelligence-save">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" id="intelligence-save" type="text" name="" value="" readonly="">
+									<input class="form-control skill intelligence" id="intelligence-save" type="text" name="" value="" readonly="" data-modifier="#intelligence" data-proficiency="#intelligence-proficiency">
 								</div>
 								<div class="col-md-3">	
 									Intelligence
@@ -476,10 +498,10 @@
 							</div>
 							<div class="row">
 								<div class="col-md-1">
-									<input class="proficiency" type="checkbox" data-target="#wisdom-save">
+									<input class="proficiency" id="wisdom-proficiency" type="checkbox" data-target="#wisdom-save">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" id="wisdom-save" type="text" name="" value="" readonly="">
+									<input class="form-control skill wisdom" id="wisdom-save" type="text" name="" value="" readonly="" data-modifier="#wisdom" data-proficiency="#wisdom-proficiency">
 								</div>
 								<div class="col-md-3">	
 									Widsom
@@ -487,10 +509,10 @@
 							</div>
 							<div class="row">
 								<div class="col-md-1">
-									<input class="proficiency" type="checkbox" data-target="#charisma-save">
+									<input class="proficiency" id="charisma-proficiency" type="checkbox" data-target="#charisma-save">
 								</div>
 								<div class="col-md-3">
-									<input class="form-control" id="charisma-save" type="text" name="" value="" readonly="">
+									<input class="form-control skill charisma" id="charisma-save" type="text" name="" value="" readonly="" data-modifier="#charisma" data-proficiency="#charisma-proficiency">
 								</div>
 								<div class="col-md-3">	
 									Charisma
