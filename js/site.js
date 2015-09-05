@@ -36,7 +36,7 @@ $(function () {
   	}
   });
 
-  $('#dexterity').change(function () {
+  $('#dexterity').change(function () {					// make dexterity bonus the initiative value
   	var value = $(this).val();
   	var calculated = Math.floor((value - 10) / 2);
   	
@@ -49,8 +49,8 @@ $(function () {
   	}
   });
 
-  $(".weapon-mod").change(function () {
-  	
+  $(".weapon-mod").change(function () {					// recalculate the weapon attack bonus when the weapon modifier changes
+  	updateWeaponMod(this);										
   });
 
   function updateAttribute (el) {								// how to calculate skill checks and saves
@@ -64,15 +64,13 @@ $(function () {
   	if (proficient) {
   		var calculated = Math.floor((value - 10) / 2) + Number(proficiencyBonus);
   	}
-
   	else {
   		var calculated = Math.floor((value - 10) / 2);
   	}
 
   	if (calculated < 0) {
   		$(el).val(calculated);
-  	}
-
+  	}	
   	else {
   		$(el).val('+' + calculated);
   	}
@@ -95,6 +93,12 @@ $(function () {
   }
 
   function updateWeaponMod (el) {
+  	var option = $(el).val();
+  	var attackBonus = $(el).closest('.weapon-row').find('.bonus');						
 
+  	$(attackBonus).removeClass('strength dexterity constitution intelligence wisdom charisma');
+  	$(attackBonus).addClass(option);
+  	$(attackBonus).data('modifier' , '#' + option);
+  	$('#' + option).change();
   }
 })
