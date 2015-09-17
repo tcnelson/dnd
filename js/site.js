@@ -53,6 +53,10 @@ $(function () {
   	updateWeaponMod(this);										
   });
 
+  $('.spell-modifier').change(function () {
+  	updateSpellMod(this);
+  });
+
   function updateAttribute (el) {								// how to calculate skill checks and saves
   	var proficiencyBonus = $('#proficiency-bonus').val();
   	var modifier = $(el).data('modifier');
@@ -92,7 +96,7 @@ $(function () {
   	}
   }
 
-  function updateWeaponMod (el) {
+  function updateWeaponMod (el) {								// how to recalculate weapon attack bonus 
   	var option = $(el).val();
   	var attackBonus = $(el).closest('.weapon-row').find('.bonus');						
 
@@ -100,5 +104,26 @@ $(function () {
   	$(attackBonus).addClass(option);
   	$(attackBonus).data('modifier' , '#' + option);
   	$('#' + option).change();
+  }
+
+  function updateSpellMod (el) {
+  	var option = $(el).val();
+  	var proficiencyBonus =$('#proficiency-bonus').val();
+  	var spellAttackBonus = $('#spell-attack-bonus');
+  	var spellSaveDC = $('#spell-save-dc');
+
+  	$(spellAttackBonus).removeClass('strength dexterity constitution intelligence wisdom charisma');
+  	$(spellAttackBonus).addClass(option);
+  	$(spellAttackBonus).data('modifier' , '#' + option);
+  	
+  	$(spellSaveDC).removeClass('strength dexterity constitution intelligence wisdom charisma');
+  	$(spellSaveDC).addClass(option);
+  	$(spellSaveDC).data('modifier' , '#' + option);
+
+  	$('#' + option).change();
+
+  	$(spellAttackBonus) += Number (proficiencyBonus);
+
+  	$(spellSaveDC) = $(spellSaveDC) + 8 + Number (proficiencyBonus);
   }
 })

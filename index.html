@@ -48,6 +48,20 @@
 			padding-right: 15px;
 		}
 
+		.col-a-of-5 {
+			width: 22%;
+			float: left;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+
+		.col-b-of-5 {
+			width: 12%;
+			float: left;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+
 		.skill {
 			padding: 6px 10px;
 		}
@@ -188,30 +202,36 @@
 				<div class="panel-heading">Attacks</div>
 				<div class="panel-body">
 					<div class="row">
-						<div class="col-md-3">
+						<div class="col-a-of-5">
 							Weapon
 						</div>
-						<div class="col-md-3">
+						<div class="col-b-of-5">
+							Attack Bonus
+						</div>
+						<div class="col-a-of-5">
 							Damage + Modifiers
 						</div>
-						<div class="col-md-3">
+						<div class="col-a-of-5">
 							Modifier 
 						</div>
-						<div class="col-md-3">
+						<div class="col-a-of-5">
 							Damage Type
 						</div>
 					</div>
 					<div class="row weapon-row" id="weaponRow-1">
-						<div class="col-md-3">
+						<div class="col-a-of-5">
 							<input class="form-control" type="text" name="" placeholder="Type">
 						</div>
-						<div class="col-md-3">
+						<div class="col-b-of-5">
+							<input class="form-control" type="text" name="" readonly="">
+						</div>
+						<div class="col-a-of-5">
 							<div class="input-group">
 								<input type="text" class="form-control" name="" value="">
 								<span class="input-group-addon bonus" id="" data-modifier=""></span>
 							</div>
 						</div>
-						<div class="col-md-3">
+						<div class="col-a-of-5">
 							<select class="form-control weapon-mod" name="">
 								<option value=""></option>
 								<option value="strength">Strength</option>
@@ -222,7 +242,7 @@
 								<option value="charisma">Charisma</option>
 							</select>
 						</div>
-						<div class="col-md-3">
+						<div class="col-a-of-5">
 							<select class="form-control" type="text" name="">
 								<option></option>
 								<option>Acid</option>
@@ -591,23 +611,23 @@
 		<div class="panel-body">
 			<div class="row">
 				<div class="col-md-2">
-					<select class="form-control" name="">
+					<select class="form-control spell-modifier" name="">
 						<option value=""></option>
-						<option value="">Strength</option>
-						<option value="">Dexterity</option>
-						<option value="">Constitution</option>
-						<option value="">Intelligence</option>
-						<option value="">Wisdom</option>
-						<option value="">Charisma</option>
+						<option value="strength">Strength</option>
+						<option value="dexterity">Dexterity</option>
+						<option value="constitution">Constitution</option>
+						<option value="intelligence">Intelligence</option>
+						<option value="wisdom">Wisdom</option>
+						<option value="charisma">Charisma</option>
 					</select>
 					Spellcasting Ability
 				</div>
 				<div class="col-md-1">
-					<input class="form-control" type="text" name="" value="" readonly="">
+					<input class="form-control" id="spell-save-dc" data-modifier="" type="text" name="" value="" readonly="">
 					Spell Save DC
 				</div>
 				<div class="col-md-1">
-					<input class="form-control" data-toggle="popover" data-content="Add this to your attack roll, not your damage roll." type="text" data-trigger="focus"name="" value="" readonly="">
+					<input class="form-control bonus" id="spell-attack-bonus" data-modifier="" data-toggle="popover" data-content="Add this to your attack roll, not your damage roll." type="text" data-trigger="focus"name="" value="" readonly="">
 					Spell Attack Bonus
 				</div>
 			</div>
